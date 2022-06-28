@@ -65,7 +65,7 @@ app.get('/Sortprice', async(req,res)=>{
     //2.truy cap database ATNToys
     let dbo = client.db("Product");
     //tra ve toan bo bang product
-    let products = await dbo.collection("goods").find().sort({'price': 1}).toArray()
+    let products = await dbo.collection("goods").find().sort({'price': -1}).toArray()
     res.render('home',{'products': products})
 })
 
